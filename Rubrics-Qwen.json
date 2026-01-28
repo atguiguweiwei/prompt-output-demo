@@ -1,0 +1,182 @@
+[
+  {
+    "rubric_id": "R01",
+    "rubric_content": "代码必须使用 Java 语言实现 Tic-Tac-Toe 游戏",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "项目使用 Java 语言编写，Main.java 是核心文件，这是明确的显式要求，通过代码自动化/模型验证可判断是否使用了 Java 语言，是任务的核心功能。"
+  },
+  {
+    "rubric_id": "R02",
+    "rubric_content": "游戏必须使用 5x5 棋盘（BOARD_SIZE = 5）",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "代码中明确定义 BOARD_SIZE = 5，这是游戏的基本规则，是显式要求，通过代码验证可直接确认。"
+  },
+  {
+    "rubric_id": "R03",
+    "rubric_content": "游戏规则必须为：连成 4 个获胜（WIN_LENGTH = 4），连成 3 个失败（LOSE_LENGTH = 3）",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "代码中明确定义 WIN_LENGTH = 4 和 LOSE_LENGTH = 3，这是游戏的核心规则，是显式要求，通过代码验证可直接确认。"
+  },
+  {
+    "rubric_id": "R04",
+    "rubric_content": "必须实现 checkWinner() 方法检查玩家是否连成 4 个或更多标记",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "代码中必须包含 checkWinner() 方法来实现获胜条件检查，这是游戏的核心功能之一，是显式要求。"
+  },
+  {
+    "rubric_id": "R05",
+    "rubric_content": "必须实现 checkLoser() 方法检查玩家是否连成 3 个标记",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "代码中必须包含 checkLoser() 方法来实现失败条件检查，这是游戏的核心功能之一，是显式要求。"
+  },
+  {
+    "rubric_id": "R06",
+    "rubric_content": "游戏主循环必须先检查 4 连获胜，再检查 3 连失败，最后检查平局",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "游戏逻辑必须按照这个顺序进行判断，确保规则的正确性，这是显式要求，通过代码验证可确认判断顺序。"
+  },
+  {
+    "rubric_id": "R07",
+    "rubric_content": "必须支持水平、垂直、对角线和反对角线四个方向的检查",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "代码中 directions 数组必须包含四个方向的检查 {{0, 1}, {1, 0}, {1, 1}, {1, -1}}，这是游戏规则的必要实现，是显式要求。"
+  },
+  {
+    "rubric_id": "R08",
+    "rubric_content": "必须处理用户输入验证，包括范围检查和格式检查",
+    "必要性": "Important",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "动态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "游戏需要处理用户的无效输入，确保程序不会因无效输入而崩溃，这是隐性的鲁棒性要求，需要通过人工测试验证。"
+  },
+  {
+    "rubric_id": "R09",
+    "rubric_content": "必须检查单元格是否为空，防止重复放置标记",
+    "必要性": "Important",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "动态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "游戏需要防止玩家在已占用的位置放置标记，这是隐性的鲁棒性要求，需要通过人工测试验证。"
+  },
+  {
+    "rubric_id": "R10",
+    "rubric_content": "必须使用 Scanner 类处理用户输入",
+    "必要性": "Important",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "代码中使用 Scanner 类处理用户输入，这是显式要求，通过代码验证可直接确认。"
+  },
+  {
+    "rubric_id": "R11",
+    "rubric_content": "必须在游戏开始时显示规则提示信息",
+    "必要性": "Important",
+    "评估维度": "交互体验（interaction）",
+    "验证方式": "动态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "游戏需要向用户说明规则，这是隐性的交互体验要求，需要通过人工测试验证。"
+  },
+  {
+    "rubric_id": "R12",
+    "rubric_content": "必须显示棋盘状态，让玩家了解当前游戏情况",
+    "必要性": "Important",
+    "评估维度": "交互体验（interaction）",
+    "验证方式": "动态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "游戏需要显示棋盘状态，这是隐性的交互体验要求，需要通过人工测试验证。"
+  },
+  {
+    "rubric_id": "R13",
+    "rubric_content": "必须在游戏结束时显示结果（获胜、失败或平局）",
+    "必要性": "Important",
+    "评估维度": "交互体验（interaction）",
+    "验证方式": "动态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "游戏需要在结束时显示结果，这是隐性的交互体验要求，需要通过人工测试验证。"
+  },
+  {
+    "rubric_id": "R14",
+    "rubric_content": "必须使用 Docker 容器化部署，使用 Java 21 环境",
+    "必要性": "Optional",
+    "评估维度": "部署要求（deployment）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "Dockerfile 中明确使用 Java 21 环境，这是可选的部署要求，通过代码验证可直接确认。"
+  },
+  {
+    "rubric_id": "R15",
+    "rubric_content": "代码风格必须一致，遵循 Java 编码规范",
+    "必要性": "Optional",
+    "评估维度": "风格（style）",
+    "验证方式": "静态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "代码风格一致有助于可读性和维护性，这是隐性的风格要求，需要通过人工检查验证。"
+  },
+  {
+    "rubric_id": "R16",
+    "rubric_content": "必须实现玩家交替机制，确保 X 和 O 玩家轮流行动",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "游戏需要实现玩家交替机制，这是隐性的功能要求，通过代码验证可确认玩家轮流行动的逻辑。"
+  },
+  {
+    "rubric_id": "R17",
+    "rubric_content": "必须正确处理棋盘边界检查，防止数组越界错误",
+    "必要性": "Important",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "动态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "游戏需要处理棋盘边界检查，防止数组越界错误，这是隐性的鲁棒性要求，需要通过动态测试验证。"
+  },
+  {
+    "rubric_id": "R18",
+    "rubric_content": "必须实现平局检测机制，当棋盘填满时结束游戏",
+    "必要性": "Important",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "游戏需要实现平局检测机制，这是隐性的功能要求，通过代码验证可确认平局检测逻辑。"
+  },
+  {
+    "rubric_id": "R19",
+    "rubric_content": "必须正确初始化棋盘，所有位置初始为空字符串",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "游戏开始前必须正确初始化棋盘，这是隐性的基础功能要求，通过代码验证可确认初始化逻辑。"
+  },
+  {
+    "rubric_id": "R20",
+    "rubric_content": "必须正确处理坐标转换，将用户输入的行号和列号映射到棋盘数组",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "游戏需要正确处理坐标转换，这是隐性的功能要求，通过代码验证可确认坐标映射逻辑。"
+  }
+]
